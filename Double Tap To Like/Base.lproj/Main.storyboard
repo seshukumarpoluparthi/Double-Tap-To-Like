@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y7j-am-cMe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photos-->
+        <scene sceneID="xGk-YO-Btf">
+            <objects>
+                <tableViewController id="9D7-g5-aCa" customClass="PhotosViewController" customModule="Double_Tap_To_Like" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TPd-r4-mC9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="367" id="BxA-Bf-6hc" customClass="PhotoCell" customModule="Double_Tap_To_Like" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="367"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BxA-Bf-6hc" id="sFp-Sv-6NE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8sb-1Y-8FW" customClass="RoundedImageView" customModule="Double_Tap_To_Like" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="11" width="343" height="345"/>
+                                        </imageView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ech-l0-rN5">
+                                            <rect key="frame" x="326" y="323" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="Q25-V2-Uyb"/>
+                                                <constraint firstAttribute="height" constant="25" id="yQx-T7-8UE"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="exA-kr-9Pi">
+                                            <rect key="frame" x="187.5" y="183.5" width="0.0" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" id="5t6-xo-iSa"/>
+                                                <constraint firstAttribute="width" secondItem="exA-kr-9Pi" secondAttribute="height" id="qk3-a5-6e4"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ech-l0-rN5" secondAttribute="bottom" constant="8" id="AG0-TO-Xen"/>
+                                        <constraint firstItem="exA-kr-9Pi" firstAttribute="centerX" secondItem="sFp-Sv-6NE" secondAttribute="centerX" id="G99-gL-Uai"/>
+                                        <constraint firstItem="8sb-1Y-8FW" firstAttribute="bottom" secondItem="sFp-Sv-6NE" secondAttribute="bottomMargin" id="i3h-Gw-u7e"/>
+                                        <constraint firstItem="8sb-1Y-8FW" firstAttribute="leading" secondItem="sFp-Sv-6NE" secondAttribute="leadingMargin" id="jFu-lS-Nn1"/>
+                                        <constraint firstItem="8sb-1Y-8FW" firstAttribute="trailing" secondItem="sFp-Sv-6NE" secondAttribute="trailingMargin" id="m2U-Aj-XBI"/>
+                                        <constraint firstItem="8sb-1Y-8FW" firstAttribute="top" secondItem="sFp-Sv-6NE" secondAttribute="topMargin" id="nTd-iB-Ge2"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ech-l0-rN5" secondAttribute="trailing" constant="8" id="t6i-Kn-mvA"/>
+                                        <constraint firstItem="exA-kr-9Pi" firstAttribute="centerY" secondItem="sFp-Sv-6NE" secondAttribute="centerY" id="uLX-Hq-TdB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="isLikedImageView" destination="Ech-l0-rN5" id="a8A-6T-E4b"/>
+                                    <outlet property="likeImageViewWidthConstraint" destination="5t6-xo-iSa" id="2oY-aM-r6h"/>
+                                    <outlet property="photoImageView" destination="8sb-1Y-8FW" id="tv2-67-onS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9D7-g5-aCa" id="1b3-YX-w0i"/>
+                            <outlet property="delegate" destination="9D7-g5-aCa" id="3z3-wZ-5Q0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Photos" id="cYc-bi-22x"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vdj-eI-Thc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="143.47826086956522"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mbt-ay-YJ0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y7j-am-cMe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="B8V-Av-SLJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9D7-g5-aCa" kind="relationship" relationship="rootViewController" id="K8T-m2-Zew"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TFL-iI-Fg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.8" y="143.47826086956522"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heartIcon" width="100" height="100"/>
+    </resources>
+</document>
